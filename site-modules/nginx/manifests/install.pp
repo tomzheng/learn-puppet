@@ -4,16 +4,11 @@
 #
 # @example
 #   include nginx::install
-class nginx::install {
-  yumrepo { 'company_app_repo':
-    enabled  => 1,
-    descr    => 'epel repo',
-    baseurl  => 'http://nginx.org/packages/mainline/centos/7/$basearch/',
-    gpgcheck => 0,
-  }
-
-  package { 'install_nginx':
-    name   => 'nginx',
+class nginx::install(
+  $package_name  = $nginx::params::package_name,
+) inherits nginx::params {
+package { 'install_nginx':
+    name => $package_name,
     ensure => 'present',
-  }
+ }
 }
