@@ -8,7 +8,7 @@ class nginx::install {
   yumrepo { 'company_app_repo':
     enabled  => 1,
     descr    => 'epel repo',
-    baseurl  => 'https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch',
+    baseurl  => 'http://nginx.org/packages/mainline/centos/7/$basearch/',
     gpgcheck => 0,
   }
 
