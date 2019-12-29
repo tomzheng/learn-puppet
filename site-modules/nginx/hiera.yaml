@@ -8,3 +8,5 @@ defaults:  # Used for any hierarchy level that omits these keys.
 hierarchy:
   - name: 'common'
     path: 'common.yaml'
+  - name: "Per-node data (yaml version)"
+    path: "nodes/%{::trusted.certname}.yaml"
